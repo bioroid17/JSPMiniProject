@@ -73,10 +73,10 @@
 									<span class="image">
 										<img src="images/pic02.jpg" alt="" />
 									</span>
-									<a href="generic.html">
-										<h2>Lorem</h2>
+									<a href="reservation/airfortmain.jsp">
+										<h2>Airfort</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>항공기 예약 시스템</p>
 										</div>
 									</a>
 								</article>

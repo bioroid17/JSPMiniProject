@@ -3327,3 +3327,29 @@ input, select, textarea {
 			}
 
 		}
+
+		
+
+
+	
+.login article {
+			-moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
+			-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+			-ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
+			transition: transform 0.5s ease, opacity 0.5s ease;
+			position: relative;
+			width: calc(50% - 2.5em);
+			margin: 2.5em 0 0 2.5em;
+}
+
+
+#wrapper > * > .logininner {
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 2.5em;
+		margin-left:500px;
+	}
+
+.logintag {
+	text-align:center;
+}
