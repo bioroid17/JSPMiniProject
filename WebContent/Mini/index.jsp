@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE HTML>
 <!--
 	Phantom by HTML5 UP
@@ -11,8 +15,8 @@
 		<title>Phantom by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -24,7 +28,7 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Phantom</span>
 								</a>
 
 							<!-- Nav -->
@@ -60,7 +64,7 @@
 							<section class="tiles">
 								<article class="style1">
 									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
+										<img src="../images/pic01.jpg" alt="" />
 									</span>
 									<a href="generic.jsp">
 										<h2>Magna</h2>
@@ -71,18 +75,31 @@
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
+										<img src="../images/pic02.jpg" alt="" />
 									</span>
-									<a href="reservation/airfortmain.jsp">
-										<h2>Airfort</h2>
-										<div class="content">
-											<p>항공기 예약 시스템</p>
-										</div>
-									</a>
+									
+									<c:if test="${sessionScope.memId eq null}">
+										<a href="user/airportmain.do">
+											<h2>Airfort</h2>
+											<div class="content">
+												<p>항공기 예약 시스템</p>
+											</div>
+										</a>
+									</c:if>
+									
+									<c:if test="${sessionScope.memId ne null}">
+										<a href="user/airportmain.do?userId=${sessionScope.memId}">
+											<h2>Airport</h2>
+											<div class="content">
+												<p>항공기 예약 시스템</p>
+											</div>
+										</a>
+									</c:if>
+									
 								</article>
 								<article class="style3">
 									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
+										<img src="../images/pic03.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>Feugiat</h2>
@@ -93,7 +110,7 @@
 								</article>
 								<article class="style4">
 									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
+										<img src="../images/pic04.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>Tempus</h2>
@@ -104,7 +121,7 @@
 								</article>
 								<article class="style5">
 									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
+										<img src="../images/pic05.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>Aliquam</h2>
@@ -115,7 +132,7 @@
 								</article>
 								<article class="style6">
 									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
+										<img src="../images/pic06.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>Veroeros</h2>
@@ -126,7 +143,7 @@
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="images/pic07.jpg" alt="" />
+										<img src="../images/pic07.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>Ipsum</h2>
@@ -137,7 +154,7 @@
 								</article>
 								<article class="style3">
 									<span class="image">
-										<img src="images/pic08.jpg" alt="" />
+										<img src="../images/pic08.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>Dolor</h2>
@@ -148,7 +165,7 @@
 								</article>
 								<article class="style1">
 									<span class="image">
-										<img src="images/pic09.jpg" alt="" />
+										<img src="../images/pic09.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>Nullam</h2>
@@ -159,7 +176,7 @@
 								</article>
 								<article class="style5">
 									<span class="image">
-										<img src="images/pic10.jpg" alt="" />
+										<img src="../images/pic10.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>Ultricies</h2>
@@ -170,7 +187,7 @@
 								</article>
 								<article class="style6">
 									<span class="image">
-										<img src="images/pic11.jpg" alt="" />
+										<img src="../images/pic11.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>Dictum</h2>
@@ -181,7 +198,7 @@
 								</article>
 								<article class="style4">
 									<span class="image">
-										<img src="images/pic12.jpg" alt="" />
+										<img src="../images/pic12.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>Pretium</h2>
@@ -238,11 +255,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>

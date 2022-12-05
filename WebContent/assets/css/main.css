@@ -2419,6 +2419,14 @@ input, select, textarea {
 				border: solid 1px #c9c9c9;
 				border-left-width: 0;
 				border-top-width: 0;
+				
+			}
+			
+			table.alt tbody tr:hover td {
+				border: solid 1px #c9c9c9;
+				border-left-width: 0;
+				border-top-width: 0;
+				background-color: lightyellow;
 			}
 
 				table.alt tbody tr td:first-child {
@@ -3347,7 +3355,7 @@ input, select, textarea {
 		width: 100%;
 		margin: 0 auto;
 		padding: 0 2.5em;
-		margin-left:500px;
+		margin-left:30%;
 	}
 
 .logintag {

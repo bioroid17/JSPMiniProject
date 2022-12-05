@@ -7,8 +7,8 @@
 		<title>Phantom by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
 	</head>
 </head>
 <body class="is-preload">
@@ -20,31 +20,19 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="./images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+								<a href="../index.do" class="logo">
+									<span class="symbol"><img src="../../images/logo.svg" alt="" /></span><span class="title">Phantom</span> 
 								</a>
 
 							<!-- Nav -->
 								<nav>
 									<ul>
-										<li><a href="#menu">Menu</a></li>
+										
 									</ul>
 								</nav>
 
 						</div>
 					</header>
-
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
-							<li><a href="generic.html">Consequat dolor</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-					</nav>
 
 				<!-- Main -->
 					<div id="main">
@@ -57,11 +45,11 @@
 								<article class="style2">
 									<form id="log_1" name="loginForm" method="post" action="loginPro.do" onsubmit="return loginCheck()">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" name="userId" type="text" onkeyup="this.value=this.value.replace(/[^a-zA-Z0-9]/g,'')"  placeholder="아이디" />
+                                                <input class="form-control" name="userId" type="text" onkeyup="this.value=this.value.replace(/[^a-zA-Z0-9]/g,'')"  placeholder="아이디" autofocus />
                                                 <label>아이디</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" name="userPassword" type="password" placeholder="비밀번호" />
+                                                <input class="form-control" name="userPasswd" type="password" placeholder="비밀번호" />
                                                 <label>비밀번호</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0" style="margin-left: 43%;" >
@@ -69,8 +57,8 @@
                                             </div>
                                         </form>
                                         <div class="logintag">
-											<a>회원가입</a> | 
-											<a href="../index.jsp">메인페이지</a>
+											<a href="signselectForm.do">회원가입</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;   
+											<a href="airportmain.do">메인페이지</a>
 										</div>
 								</article>
 							</section>
@@ -80,11 +68,12 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+			<script src="../../assets/js/script.js"></script>
 
 	</body>
 </html>

@@ -25,5 +25,7 @@
 	
 	<!-- Mapper 설정 -->
 	<mappers>
+		<mapper resource="mybatis/user.xml"/>
+		<mapper resource="mybatis/air.xml"/>
 	</mappers>
 </configuration>
