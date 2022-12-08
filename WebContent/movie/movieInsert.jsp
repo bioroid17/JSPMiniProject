@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <!--
 	Phantom by HTML5 UP
@@ -9,8 +11,8 @@
 		<title>Elements - Phantom by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -21,8 +23,8 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Phantom</span>
 								</a>
 
 							<!-- Nav -->
@@ -39,11 +41,11 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
-							<li><a href="generic.html">Consequat dolor</a></li>
-							<li><a href="elements.html">Elements</a></li>
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../generic.html">Ipsum veroeros</a></li>
+							<li><a href="../generic.html">Tempus etiam</a></li>
+							<li><a href="../generic.html">Consequat dolor</a></li>
+							<li><a href="../elements.html">Elements</a></li>
 						</ul>
 					</nav>
 
@@ -53,7 +55,68 @@
 							<h1>Elements</h1>
 
 							<!-- Text -->
-								<section>
+							<section>
+								<h2>Form</h2>
+								<form method="post" action="#">
+									<div class="row gtr-uniform">
+										<div class="col-6 col-12-xsmall">
+											<input type="text" name="movieTitle" id="movieTitle" value="" placeholder="영화 제목">
+										</div>
+										<div class="col-6 col-12-xsmall">
+											<input type="file" name="moviePoster" id="moviePoster">
+										</div>
+										<div class="col-4 col-12-xsmall">
+											<input type="text" name="movieTime" id="movieTime" value="" placeholder="러닝 타임">
+										</div>
+										<div class="col-4 col-12-xsmall">
+											<input type="text" name="movieTags" id="movieTags" value="" placeholder="태그 입력">
+										</div>
+										<div class="col-4 col-12-xsmall">
+											<select name="movieGenre" id="movieGenre">
+												<option value="0">- 장르를 선택하세요 -</option>
+												<option value="1">코미디</option>
+												<option value="1">액션</option>
+												<option value="1">스릴러</option>
+												<option value="1">공포</option>
+												<option value="1">SF</option>
+												<option value="1">범죄</option>
+												<option value="1">애니메이션</option>
+											</select>
+										</div>
+										<div class="col-2 col-10-small">
+											<input type="radio" id="ageall" name="movieAge" value="all" checked>
+											<label for="ageall">전체관람가</label>
+										</div>
+										<div class="col-2 col-10-small">
+											<input type="radio" id="age12" name="movieAge" value="12">
+											<label for="age12">12세이상</label>
+										</div>
+										<div class="col-2 col-10-small">
+											<input type="radio" id="age15" name="movieAge" value="15">
+											<label for="age15">15세이상</label>
+										</div>
+										<div class="col-2 col-10-small">
+											<input type="radio" id="age18" name="movieAge" value="18">
+											<label for="age18">18세이상</label>
+										</div>
+										<div class="col-2 col-10-small">
+											<input type="radio" id="limited" name="movieAge" value="limited">
+											<label for="limited">제한관람가</label>
+										</div>
+										<div class="col-12">
+											<textarea name="demo-message" id="demo-message" placeholder="영화의 내용을 입력하세요." rows="10"></textarea>
+										</div>
+										<div class="col-12">
+											<ul class="actions">
+												<li><input type="submit" value="등록" class="primary" /></li>
+												<li><input type="reset" value="취소" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section>
+							
+								<!-- <section>
 									<h2>Text</h2>
 									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
 									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
@@ -83,7 +146,7 @@
 									</pre>
 								</section>
 
-							<!-- Lists -->
+							Lists
 								<section>
 									<h2>Lists</h2>
 									<div class="row">
@@ -159,7 +222,7 @@
 									</div>
 								</section>
 
-							<!-- Table -->
+							Table
 								<section>
 									<h2>Table</h2>
 									<h3>Default</h3>
@@ -255,7 +318,7 @@
 									</div>
 								</section>
 
-							<!-- Buttons -->
+							Buttons
 								<section>
 									<h3>Buttons</h3>
 									<ul class="actions">
@@ -288,7 +351,7 @@
 									</ul>
 								</section>
 
-							<!-- Form -->
+							Form
 								<section>
 									<h2>Form</h2>
 									<form method="post" action="#">
@@ -341,28 +404,28 @@
 									</form>
 								</section>
 
-							<!-- Image -->
+							Image
 								<section>
 									<h2>Image</h2>
 									<h3>Fit</h3>
 									<div class="box alt">
 										<div class="row gtr-uniform">
-											<div class="col-12"><span class="image fit"><img src="images/pic13.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
+											<div class="col-12"><span class="image fit"><img src="../images/pic13.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="../images/pic01.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="../images/pic02.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="../images/pic03.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="../images/pic03.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="../images/pic01.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="../images/pic02.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="../images/pic02.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="../images/pic03.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="../images/pic01.jpg" alt="" /></span></div>
 										</div>
 									</div>
 									<h3>Left &amp; Right</h3>
-									<p><span class="image left"><img src="images/pic14.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-									<p><span class="image right"><img src="images/pic15.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-								</section>
+									<p><span class="image left"><img src="../images/pic14.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+									<p><span class="image right"><img src="../images/pic15.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+								</section> -->
 
 						</div>
 					</div>
@@ -411,11 +474,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>
