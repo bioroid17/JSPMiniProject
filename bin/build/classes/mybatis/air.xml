@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="AirInfo">
+ 	
+ 	<!-- 항공기 등록 -->
+ 	<insert id="insertAir" parameterType="reserv.AirDataBean">
+ 		insert into airport (reNum, userId, airName, startCountry, startCity, finishCountry, finishCity, startDate, finishDate, startTime, finishTime)
+ 			values(#{reNum}, #{userId}, #{airName}, #{startCountry}, #{startCity}, #{finishCountry}, #{finishCity}, #{startDate}, #{finishDate}, #{startTime}, #{finishTime})
+ 	</insert>
+	
+	<select id="airCount" resultType="Integer">
+ 		select count(*) from airport
+ 	</select>
+	
+	<select id="getairList" resultType="reserv.AirDataBean" parameterType="java.util.Map">
+		select * from airport order by reNum desc
+	</select>
+	
+	<select id="getAirContent" resultType="reserv.AirDataBean" parameterType="Integer">
+		select * from airport where reNum=#{reNum}
+	</select>
+	
+ </mapper>
