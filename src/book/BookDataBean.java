@@ -9,7 +9,7 @@ public class BookDataBean {
 	private int b_num;			// 책 번호
 	private String b_image;		// 책 이미지
 	
-	public int getkeywords() {
+	public String getkeywords() {
 		return keyWords;
 	}
 }

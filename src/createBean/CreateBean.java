@@ -27,7 +27,11 @@ public class CreateBean {
 		return new AirDBBean();
 	}
 	
-	
+	//책 상세
+	@Bean
+	public BookDao bookDao() {
+		return new BookDBBean();
+	}
 	
 	@Bean
 	public ViewResolver viewResolver() {
