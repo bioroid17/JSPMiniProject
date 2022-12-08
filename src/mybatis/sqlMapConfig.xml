@@ -27,5 +27,6 @@
 	<mappers>
 		<mapper resource="mybatis/user.xml"/>
 		<mapper resource="mybatis/air.xml"/>
+		<mapper resource="mybatis/book.xml"/>
 	</mappers>
 </configuration>
