@@ -8,6 +8,10 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import reserv.AirDBBean;
 import reserv.AirDao;
+import book.BookDBBean;
+import book.BookDao;
+import movie.MovieDAO;
+import movie.MovieDBBean;
 import reserv.ReservDBBean;
 import reserv.ReservDao;
 import user.UserDBBean;
@@ -29,21 +33,23 @@ public class CreateBean {
 		return new AirDBBean();
 	}
 	
-<<<<<<< HEAD
 	// 예약
 	@Bean
 	public ReservDao ReservDao() {
 		return new ReservDBBean();
 	}
 	
-	
-=======
 	//책 상세
 	@Bean
 	public BookDao bookDao() {
 		return new BookDBBean();
 	}
->>>>>>> b3a65ba5afe2cfd5c69186055a139d48e9e9cbb5
+	
+	// 영화 추천
+	@Bean
+	public MovieDAO movieDAO() {
+		return new MovieDBBean();
+	}
 	
 	@Bean
 	public ViewResolver viewResolver() {

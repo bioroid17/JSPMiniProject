@@ -1,4 +1,4 @@
-package src.book;
+package book;
 
 
 public class BookDataBean {
