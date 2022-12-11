@@ -1,5 +1,9 @@
 package reservHandler;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,38 +12,41 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import reserv.AirDao;
 import reserv.AirDataBean;
+import reserv.ReservDao;
 import user.UserDao;
 import user.UserDataBean;
 
 @Controller
-public class ReservContentHandler implements CommandHandler{
+public class MyReservHandler implements CommandHandler {
 	
 	@Resource
 	private UserDao userDao;
 	
 	@Resource
-	private AirDao airDao;
+	private ReservDao reservDao;
 	
-	@RequestMapping("Mini/reservair/reservcontent")
+	@RequestMapping("Mini/reservair/myReserv")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		int count = 0;
 		
 		String userId = request.getParameter("userId");
-		int reNum = Integer.parseInt(request.getParameter("reNum"));
-		
 		UserDataBean dto = userDao.getUser(userId);
-		AirDataBean ato = airDao.getAirContent(reNum);
 		
-		int reservNum=0;
 		
-		request.setAttribute("userId", userId);
-		request.setAttribute("dto", dto); // 유저
-		request.setAttribute("ato", ato); // 비행기 정보
-		request.setAttribute("reservNum", reservNum);
+		count = reservDao.reservCount(userId);
+		request.setAttribute("count", count);
 		
-		return new ModelAndView("reservair/reservcontent");
+		if(count != 0) {
+			List<AirDataBean> rto = reservDao.getMyList(userId);
+			request.setAttribute("userId", userId);
+			request.setAttribute("rto", rto);
+		}
+		
+		request.setAttribute("dto", dto);
+		
+		return new ModelAndView("reservair/myReserv");
 	}
 
 }
