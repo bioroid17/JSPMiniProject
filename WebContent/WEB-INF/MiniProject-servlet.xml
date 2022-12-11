@@ -16,4 +16,5 @@
 	<context:component-scan base-package="createBean" />
 	<context:component-scan base-package="userHandler" />
 	<context:component-scan base-package="reservHandler" />
+	<context:component-scan base-package="movieHandler" />
 </beans>

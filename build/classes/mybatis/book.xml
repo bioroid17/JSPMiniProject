@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="BookInfo">
+ 	
+ 	<!-- 키워드 선택 -->
+	
+	<select id="keyword" resultType="">
+ 		select * from keyword
+ 	</select>
+	
+	<select id="getairList" resultType="reserv.AirDataBean" parameterType="java.util.Map">
+		select * from airport order by reNum desc
+	</select>
+	
+	<select id="getAirContent" resultType="reserv.AirDataBean" parameterType="Integer">
+		select * from airport where reNum=#{reNum}
+	</select>
+	
+ </mapper>

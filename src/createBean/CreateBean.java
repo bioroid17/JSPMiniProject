@@ -8,6 +8,10 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import reserv.AirDBBean;
 import reserv.AirDao;
+import book.BookDBBean;
+import book.BookDao;
+import movie.MovieDAO;
+import movie.MovieDBBean;
 import user.UserDBBean;
 import user.UserDao;
 
@@ -31,6 +35,12 @@ public class CreateBean {
 	@Bean
 	public BookDao bookDao() {
 		return new BookDBBean();
+	}
+	
+	// 영화 추천
+	@Bean
+	public MovieDAO movieDAO() {
+		return new MovieDBBean();
 	}
 	
 	@Bean
