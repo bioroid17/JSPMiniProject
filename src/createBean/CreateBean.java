@@ -29,6 +29,7 @@ public class CreateBean {
 		return new AirDBBean();
 	}
 	
+<<<<<<< HEAD
 	// 예약
 	@Bean
 	public ReservDao ReservDao() {
@@ -36,6 +37,13 @@ public class CreateBean {
 	}
 	
 	
+=======
+	//책 상세
+	@Bean
+	public BookDao bookDao() {
+		return new BookDBBean();
+	}
+>>>>>>> b3a65ba5afe2cfd5c69186055a139d48e9e9cbb5
 	
 	@Bean
 	public ViewResolver viewResolver() {
