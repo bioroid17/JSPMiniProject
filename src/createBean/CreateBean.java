@@ -12,6 +12,8 @@ import book.BookDBBean;
 import book.BookDao;
 import movie.MovieDAO;
 import movie.MovieDBBean;
+import reserv.ReservDBBean;
+import reserv.ReservDao;
 import user.UserDBBean;
 import user.UserDao;
 
@@ -29,6 +31,12 @@ public class CreateBean {
 	@Bean
 	public AirDao airDao() {
 		return new AirDBBean();
+	}
+	
+	// 예약
+	@Bean
+	public ReservDao ReservDao() {
+		return new ReservDBBean();
 	}
 	
 	//책 상세

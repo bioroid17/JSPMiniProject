@@ -9,9 +9,15 @@ var userNameMsg = "이름을 입력하세요";
 var userTelMsg = "전화번호를 입력하세요";
 var userTelMsgs = "전화번호를 정확히 입력하세요";
 var userRePwMsg = "재입력 비밀번호가 일치하지 않습니다.";
-var confirmMsg = "이미 사용중인 아이디 입니다."
-var confirmtelMsg = "중복된 전화번호입니다."
-var passwderror = "비밀번호가 일치하지 않습니다."
+var confirmMsg = "이미 사용중인 아이디 입니다.";
+var confirmtelMsg = "중복된 전화번호입니다.";
+var passwderror = "비밀번호가 일치하지 않습니다.";
+var scountryMsg = "출발 나라를 선택해 주세요";
+var scityMsg = "출발 지역을 선택해 주세요";
+var fcountryhMsg = "도착 나라를 선택헤 주세요";
+var fcityMsg = "도착 지역을 선택헤 주세요";
+var dateMsg = "날짜가 지정한 날짜보다 작습니다"
+var timeMsg = "시간이 지정한 시간보다 작습니다"
 
 var signError = "회원가입에 실패했습니다 \n 잠시후 다시 시도해주세요."
 
@@ -142,3 +148,45 @@ function modifyviewcheck() {
 	}
 }
 
+function aircheck() {
+	
+	// 출발 지역 선택 X
+	if(! airinputForm.startCountry.value) {
+		alert(scountryMsg);
+		airinputForm.startCountry.focus();
+		return false;
+	}
+	
+//	else if(! airinputForm.startCity.value) {
+//		alert(scityMsg);
+//		return false;
+//	}
+	
+	// 도착 지역 선택 X
+	else if(! airinputForm.finishCountry.value) {
+		alert(fcountryhMsg);
+		airinputForm.finishCountry.focus();
+		return false;
+	}
+	
+//	else if(! airinputForm.finishCity.value) {
+//		alert(fcityhMsg);
+//		airinputForm.finishCity.focus();
+//		return false;
+//	}
+	
+	// 날짜 비교
+	else if(airinputForm.startDate.value > airinputForm.finishDate.value) {
+		alert(dateMsg);
+		airinputForm.startDate.focus();
+		return false;
+	
+	// 시간 비교
+	} else if(airinputForm.startDate.value == airinputForm.finishDate.value) {
+		if (airinputForm.startTime.value > airinputForm.finishTime.value) {
+			alert(timeMsg);
+			airinputForm.startDate.focus();
+			return false;
+		}
+	}
+}

@@ -57,7 +57,7 @@
 						</div>
 						<ul>
 							<li><a href="logoutPro.do">로그아웃</a></li>
-							<li><a href="#">내 예약 보기</a></li>
+							<li><a href="../reservair/myReserv.do?userId=${dto.userId}">내 예약 보기</a></li>
 							<li><a href="../reservair/reservmain.do?userId=${dto.userId}">예약 하러가기</a></li>
 							<li><a href="../user/usermodifyForm.do?userId=${dto.userId}">회원정보 수정</a></li>
 							<li><a href="../user/userdeleteForm.do?userId=${dto.userId}">회원탈퇴</a></li>

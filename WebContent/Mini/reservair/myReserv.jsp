@@ -61,44 +61,60 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">						
-							<h1>이곳은 공항</h1>
-								<div class="col-6 col-12-medium">		
-									<ul class="actions stacked">
-										<c:if test="${dto.userInfo ne '일반회원'}">
-											<li><a href="airinputForm.do?userId=${dto.userId}" class="button small fit">비행기 등록</a></li>
-										</c:if>
-									</ul>
-								</div>
-								<c:if test="${count == 0}">
-		                           <tr>
-		                              <td colspan="10" style="text-align:center"><b>현재 등록된 일정이 없습니다.</b></td>
-		                           </tr>
-	                        	</c:if>
-	                        	<c:if test="${count != 0}">
+							<h1>마이 페이지</h1>
+							<c:if test="${count == 0}">
+		                        <tr>
+		                           <td colspan="10" style="text-align:center"><b>현재 등록된 일정이 없습니다.</b></td>
+		                        </tr>
+	                        </c:if>
+							<c:if test="${count != 0}">
+								
 	                        			<div class="table-wrapper">
 										<table class="alt">
-											<thead>
-												<tr>
-													<th>항공사</th>
-													<th>출발지</th>
-													<th>도착지</th>
-													<th>출발 시간</th>
-													<th>도착 시간</th>
-												</tr>
-											</thead>
 											<tbody>
-												<c:forEach var="ato" items="${ato}">
-													<tr onclick="location='reservcontent.do?userId=${dto.userId}&reNum=${ato.reNum}'">
-														<td>${ato.airName}</td>
-														<td>${ato.startCity}</td>
-														<td>${ato.finishCity}</td>
-														<td>${ato.startDate} - ${ato.startTime}</td>
-														<td>${ato.finishDate} - ${ato.finishTime}</td>
-													</tr>
+												<c:forEach var="rto" items="${rto}">
+													<hr>
+													<div style="display:flex; justify-content:center; margin-bottom: -2%;">
+													
+														<div>
+															<h5>예약자 이름</h5>
+															<h5>&nbsp;&nbsp;&nbsp;${rto.userName}</h5>
+														</div>
+														
+														<span style="width:5%;"></span>
+														
+														<div>
+															<h4>${rto.startCountry} - ${rto.startCity}</h4>
+															<h5>${rto.startDate} - ${rto.startTime}</h5>
+														</div>
+														
+														<span style="width:100px;"></span>
+														
+														<div>
+															<span><img src="../../images/airplane.png" alt="" /></span>
+														</div>
+														
+														<span style="width:100px;"></span>
+														
+														<div>
+															<h4>${rto.finishCountry} - ${rto.finishCity}</h4>
+															<h5>${rto.finishDate} - ${rto.finishTime}</h5>
+														</div>
+														
+														<span style="width:5%;"></span>
+														
+														<div>
+															<h5>${rto.seatLevel} / ${rto.reservPerseon}명</h5>
+															<h5>${rto.seatNum}</h5>
+														</div>
+																		
+													</div>
+													<hr>
 												</c:forEach>
 											</tbody>
 										</table>
 									</div>
+									
 	                        	</c:if>
 						</div>
 					</div>
