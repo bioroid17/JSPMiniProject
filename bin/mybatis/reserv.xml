@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="ReservInfo">
+ 
+	<insert id="insertReserv" parameterType="reserv.ReservDataBean">
+		insert into reservation(reservNum, reNum, userId, reservAir, reservPerseon, seatLevel, seatNum)
+			values(#{reservNum}, #{reNum}, #{userId}, #{reservAir}, #{reservPerseon}, #{seatLevel}, #{seatNum})
+	</insert>
+	
+	<select id="reservCount" resultType="Integer">
+ 		select count(*) from reservation where userId = #{userId}
+ 	</select>
+ 	
+	<select id="getMyList" resultType="reserv.ReservDataBean">
+		select 
+			r.reservNum, 
+		    r.reservAir,
+		    r.reservPerseon, 
+		    r.seatLevel,
+		    r.seatNum,
+		    u.userId,
+		    u.userName,
+		    a.reNum,
+		    a.startCountry,
+		    a.startCity,
+		    a.finishCountry,
+		    a.finishCity,
+		    a.startDate,
+		    a.startTime,
+		    a.finishDate,
+		    a.finishTime
+		    
+		    from reservation r
+				inner join 
+					user u on(r.userId = u.userId)
+					
+				inner join
+					airport a on (r.reNum = a.reNum)
+			where u.userId=#{userId}
+		    order by r.reservNum DESC
+	</select>
+	
+ </mapper>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="UserInfo">
+ 	
+ 	<!-- 일반유저 가입 -->
+ 	<insert id="insertUser" parameterType="user.UserDataBean">
+ 		insert into user(userId, userPasswd, userInfo, userName, userTel)
+ 			values( #{userId}, #{userPasswd}, #{userInfo}, #{userName}, #{userTel})
+ 	</insert>
+ 	
+ 	<!-- 항공사유저 가입 -->
+ 	<insert id="insertAirUser" parameterType="user.UserDataBean">
+ 		insert into user(userId, userPasswd, userInfo, userName, userTel)
+ 			values( #{userId}, #{userPasswd}, #{userInfo}, #{userName}, #{userTel})
+ 	</insert>
+	
+	<!-- 아이디 중복 -->
+	<select id="checkId" parameterType="user.UserDataBean" resultType="int">
+		select count(*) from user where userId = #{userId}
+	</select>
+	
+	<!-- 전화번호 중복  -->
+	<select id="checkTel" parameterType="user.UserDataBean" resultType="int">
+		select count(*) from user where userTel = #{userTel}
+	</select>
+	
+	<!-- 메인페이지 아이디를 통한 유저 정보 가져오기  -->
+	<select id = "getUser" parameterType = "String" resultType = "user.UserDataBean">
+ 		select * from user where userId = #{userId}
+ 	 </select>
+	
+	<update id="modifyUser" parameterType="user.UserDataBean">
+		update user set userPasswd=#{userPasswd}, userTel=#{userTel} where userId=#{userId}
+	</update>
+	
+	<delete id="deleteUser" parameterType="String">
+		delete from user where userId=#{userId}
+	</delete>
+	
+ </mapper>
