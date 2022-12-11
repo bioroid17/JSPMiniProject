@@ -6,3 +6,4 @@ public class BookDao {
 	
 	public BookDataBean getAirContent(int reNum); // 글보기
 }
+// 인터페이스로 다시 만드셈
