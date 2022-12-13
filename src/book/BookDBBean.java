@@ -3,18 +3,14 @@ package book;
 import java.util.List;
 import java.util.Map;
 
+import mybatis.SqlMapClient;
+import reserv.AirDataBean;
+
 public class BookDBBean implements BookDao{
 
-	@Override
-	public List<BookDataBean> getAirList(Map<String, Integer> map) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public BookDataBean getAirContent(int reNum) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+//	// 글 출력
+//	@Override
+//	public List<BookDataBean> getbook_detail(Map<String, Integer>map) {
+//		return SqlMapClient.getSession().selectList("", map);
+//	}
 }

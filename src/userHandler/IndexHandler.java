@@ -21,10 +21,11 @@ public class IndexHandler implements CommandHandler {
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
-		String userId = request.getParameter("userId");
-		UserDataBean dto = userDao.getUser(userId);
-		request.setAttribute("userId", userId);
-		request.setAttribute("dto", dto);
+		/*
+		 * String userId = request.getParameter("userId"); UserDataBean dto =
+		 * userDao.getUser(userId); request.setAttribute("userId", userId);
+		 * request.setAttribute("dto", dto);
+		 */
 		
 		return new ModelAndView("index");
 	}
