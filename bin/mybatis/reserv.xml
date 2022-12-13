@@ -44,4 +44,11 @@
 		    order by r.reservNum DESC
 	</select>
 	
+	<!-- <select id="reservCountUser" resultType="Integer">
+ 		select count(*) from reservation where userId = #{userId}
+ 	</select>
+	<select id="getCheck" resultType="reserv.ReservDataBean">
+ 		select * from reservation where reNum = #{reNum}
+ 	</select> -->
+ 	
  </mapper>

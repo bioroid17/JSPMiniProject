@@ -66,10 +66,10 @@
 									<span class="image">
 										<img src="../images/pic01.jpg" alt="" />
 									</span>
-									<a href="books/book_keyword.do">
-										<h2>Magna</h2>
+									<a href="../books/book_keyword.do">
+										<h2>Like Book</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>추천하는 책</p>
 										</div>
 									</a>
 								</article>
@@ -101,10 +101,10 @@
 									<span class="image">
 										<img src="../images/pic03.jpg" alt="" />
 									</span>
-									<a href="generic.html">
-										<h2>Feugiat</h2>
+									<a href="../movie/movieList.do">
+										<h2>Movies</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>영화 추천 시스템</p>
 										</div>
 									</a>
 								</article>
