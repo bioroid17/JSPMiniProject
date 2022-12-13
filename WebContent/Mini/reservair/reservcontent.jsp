@@ -122,8 +122,8 @@
 								</div>						
 							</div>
 							
-
-							<button id="open" style="width:100%;">예약하기</button>
+								<button id="open" style="width:100%;">예약하기</button>
+							
 							
 							<!-- 이 부분부터 모달 페이지  -->
 						    <div class="modal-wrapper" style="display: none; z-index: 1;">

@@ -19,8 +19,18 @@ public class ReservDBBean implements ReservDao {
 		
 	// 내 예약
 	@Override	
-	public List<AirDataBean> getMyList(String userId) {
+	public List<ReservDataBean> getMyList(String userId) {
 		return SqlMapClient.getSession().selectList("ReservInfo.getMyList", userId);
 	}
 	
+//	// 중복예약 방지
+//	@Override
+//	public int reservCountUser(String userId) {
+//		return SqlMapClient.getSession().selectOne("ReservInfo.reservCountUser", userId);
+//	}
+//	@Override	
+//	public List<AirDataBean> getCheck(int reNum) {
+//		return SqlMapClient.getSession().selectList("ReservInfo.getCheck", reNum);
+//	}
+
 }

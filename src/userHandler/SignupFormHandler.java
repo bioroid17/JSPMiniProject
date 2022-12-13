@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class signupFormHandler implements CommandHandler {
+public class SignupFormHandler implements CommandHandler {
 	@RequestMapping("Mini/user/signup")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {

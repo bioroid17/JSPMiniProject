@@ -78,7 +78,14 @@
 													
 														<div>
 															<h5>예약자 이름</h5>
-															<h5>&nbsp;&nbsp;&nbsp;${rto.userName}</h5>
+															<h5>&nbsp;${rto.userName}</h5>
+														</div>
+														
+														<span style="width:2%;"></span>
+														
+														<div>
+															<h5>항공사</h5>
+															<h5>${rto.reservAir}</h5>
 														</div>
 														
 														<span style="width:5%;"></span>

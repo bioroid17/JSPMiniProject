@@ -13,7 +13,6 @@ public class SqlMapClient {
 	static {
 		// 이 안의 모든 요소는 static으로 선언됨
 		String resource = "mybatis/sqlMapConfig.xml";
-		
 		try {
 			Reader reader = Resources.getResourceAsReader(resource);
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader);

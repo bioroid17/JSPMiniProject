@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import reserv.AirDataBean;
 import reserv.ReservDao;
+import reserv.ReservDataBean;
 import user.UserDao;
 import user.UserDataBean;
 
@@ -39,7 +40,7 @@ public class MyReservHandler implements CommandHandler {
 		request.setAttribute("count", count);
 		
 		if(count != 0) {
-			List<AirDataBean> rto = reservDao.getMyList(userId);
+			List<ReservDataBean> rto = reservDao.getMyList(userId);
 			request.setAttribute("userId", userId);
 			request.setAttribute("rto", rto);
 		}
