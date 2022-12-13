@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="Movies">
+	<select id="getAdmin" parameterType="String" resultType="movie.AdminDataBean">
+		select * from admin where adminId=#{adminId}
+	</select>
+
+	<select id="checkAdmin" parameterType="String" resultType="int">
+		select count(*) from admin
+	</select>
+	
+	<select id="getMovies" parameterType="java.util.Map" resultType="movie.MovieDataBean">
+		select movieId,movieTitle,movieGenre,moviePosterDir,moviePosterOriName,moviePosterSysName,movieTags,movieAge,movieInfo,movieTime,r 
+			from (select movieId,movieTitle,movieGenre,moviePosterOriName,moviePosterSysName,movieTags,movieAge,movieInfo,movieTime,rownum r
+			from (select movieId,movieTitle,movieGenre,moviePosterOriName,moviePosterSysName,movieTags,movieAge,movieInfo,movieTime from movie) sub2 order by movieId desc) sub1
+			where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+	
+	<select id="getMovieCount" resultType="int">
+		select count(*) from movie
+	</select>
+
+	<select id="getMovie" parameterType="int" resultType="movie.MovieDataBean">
+		select * from movie where movieId=#{movieId}
+	</select>
+	
+	<insert id="insertMovie" parameterType="movie.MovieDataBean" useGeneratedKeys="true" keyProperty="movieId">
+		insert into movie(movieTitle,movieGenre,moviePosterDir,moviePosterOriName,moviePosterSysName,movieTags,movieAge,movieInfo,movieTime)
+		values(#{movieTitle},#{movieGenre},#{moviePosterDir},#{moviePosterOriName},#{moviePosterSysName},#{movieTags},#{movieAge},#{movieInfo},#{movieTime})
+	</insert>
+	
+	<update id="updateMovie" parameterType="movie.MovieDataBean">
+		update movie set movieTitle=#{movieTitle},movieGenre=#{movieGenre},moviePosterDir=#{moviePosterDir},
+		moviePosterOriName=#{moviePosterOriName},moviePosterSysName=#{moviePosterSysName},movieTags=#{movieTags},
+		movieAge=#{movieAge},movieInfo=#{movieInfo},movieTitle=#{movieTime} where movieId=#{movieId}
+	</update>
+	
+	<delete id="deleteMovie" parameterType="int">
+		delete from movie where movieId=#{movieId}
+	</delete>
+</mapper>
