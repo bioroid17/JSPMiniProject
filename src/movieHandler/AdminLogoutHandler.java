@@ -18,7 +18,7 @@ public class AdminLogoutHandler implements CommandHandler{
 	@RequestMapping("movie/adminLogout")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-
-		return new ModelAndView ("movie/adminLogout");
+		request.getSession().removeAttribute("adminId");
+		return new ModelAndView ("movie/movieList");
 	}
 }

@@ -9,24 +9,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import movie.MovieDAO;
-import movie.MovieDataBean;
 
 @Controller
-public class MovieInfoHandler implements CommandHandler{
-
+public class AdminLoginProHandler implements CommandHandler{
 	@Resource
 	private MovieDAO movieDao;
-	@RequestMapping("movie/movieInfo")
+	@RequestMapping("movie/adminLoginPro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		int movieId = Integer.parseInt(request.getParameter("movieId"));
-	
-		MovieDataBean dto = movieDao.getMovie(movieId);
 		
-
-		request.setAttribute("prodNum", movieId);
-		request.setAttribute("dto", dto);
+		String adminId = request.getParameter("adminId");
+		String adminPasswd = request.getParameter("adminPasswd");
 		
-		return new ModelAndView ("movie/movieInfo");
+		int result = movieDao.checkAdminId(adminId, adminPasswd); // 아이디와 비밀번호 일치하는지 체크
+		
+		request.setAttribute("result", result);
+		request.setAttribute("adminId", adminId);
+		
+		return new ModelAndView ("movie/adminLoginPro");
 	}
 }

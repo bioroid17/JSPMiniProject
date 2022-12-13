@@ -58,13 +58,13 @@
 							<!-- Text -->
 							<section>
 								<h2>Form</h2>
-								<form method="post" action="#">
+								<form method="post" action="adminLoginPro.do">
 									<div class="row gtr-uniform">
 										<div class="col-12">
-											<input type="text" name="id" id="id" value="" placeholder="관리자 아이디 입력">
+											<input type="text" name="adminId" id="adminId" value="" placeholder="관리자 아이디 입력">
 										</div>
 										<div class="col-12">
-											<input type="password" name="password" id="password" value="" placeholder="비밀번호 입력">
+											<input type="password" name="adminPasswd" id="adminPasswd" value="" placeholder="비밀번호 입력">
 										</div>
 										<div class="col-12">
 											<ul class="actions">
