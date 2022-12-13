@@ -57,7 +57,7 @@
 							<!-- Text -->
 							<section>
 								<h2>Form</h2>
-								<form method="post" action="#">
+								<form method="post" action="movieInsertPro.do" enctype="multipart/form-data">
 									<div class="row gtr-uniform">
 										<div class="col-6 col-12-xsmall">
 											<input type="text" name="movieTitle" id="movieTitle" value="" placeholder="영화 제목">
@@ -75,12 +75,12 @@
 											<select name="movieGenre" id="movieGenre">
 												<option value="0">- 장르를 선택하세요 -</option>
 												<option value="1">코미디</option>
-												<option value="1">액션</option>
-												<option value="1">스릴러</option>
-												<option value="1">공포</option>
-												<option value="1">SF</option>
-												<option value="1">범죄</option>
-												<option value="1">애니메이션</option>
+												<option value="2">액션</option>
+												<option value="3">스릴러</option>
+												<option value="4">공포</option>
+												<option value="5">SF</option>
+												<option value="6">범죄</option>
+												<option value="7">애니메이션</option>
 											</select>
 										</div>
 										<div class="col-2 col-10-small">
@@ -104,7 +104,7 @@
 											<label for="limited">제한관람가</label>
 										</div>
 										<div class="col-12">
-											<textarea name="demo-message" id="demo-message" placeholder="영화의 내용을 입력하세요." rows="10"></textarea>
+											<textarea name="movieInfo" id="movieInfo" placeholder="영화의 내용을 입력하세요." rows="10"></textarea>
 										</div>
 										<div class="col-12">
 											<ul class="actions">

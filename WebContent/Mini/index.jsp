@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%-- <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-<%@taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %>
-
+<%@taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %> --%>
 <!DOCTYPE HTML>
 <!--
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+<!-- java.util.concurrent.ExecutionException: org.apache.catalina.LifecycleException: Failed to start component -->
 <html>
 	<head>
 		<title>Phantom by HTML5 UP</title>
@@ -66,7 +66,7 @@
 									<span class="image">
 										<img src="../images/pic01.jpg" alt="" />
 									</span>
-									<a href="generic.jsp">
+									<a href="books/book_keyword.do">
 										<h2>Magna</h2>
 										<div class="content">
 											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>

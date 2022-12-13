@@ -53,7 +53,7 @@
 					<div id="main">
 						<div class="inner">
 							<h1>Generic Page</h1>
-							<span class="image main"><img src="../images/pic13.jpg" alt="" /></span>
+							<span class="image main"><img src="${project}/${moviePosterSysName}" alt="" /></span>
 							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
 							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
@@ -63,40 +63,40 @@
 								<h2>영화</h2>
 								<div class="row">
 									<div class="col-6 col-12-medium">
-										<span class="image main"><img src="../images/pic10.jpg" alt="" /></span>
+										<span class="image main"><img src="${project}/moviePoster/${moviePosterSysName}" alt="" /></span>
 									</div>
 									<div class="col-6 col-12-medium">
 										<div class="table-wrapper">
 										<table>
 											<thead>
 												<tr>
-													<th colspan='2'>영화 제목</th>
+													<th colspan='2'>${dto.movieTitle}</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
 													<td>평점</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>${dto.movieTitle}</td>
 												</tr>
 												<tr>
 													<td>상영시간</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>${dto.movieTime}</td>
 												</tr>
 												<tr>
 													<td>개봉일</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>${dto.movieTitle}</td>
 												</tr>
 												<tr>
 													<td>장르</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>${dto.movieGenre}</td>
 												</tr>
 												<tr>
 													<td>감독</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>${dto.movieTitle}</td>
 												</tr>
 												<tr>
 													<td>출연진</td>
-													<td>Vitae integer tempus condimentum.</td>
+													<td>${dto.movieTitle}</td>
 												</tr>
 											</tbody>
 										</table>
@@ -109,8 +109,7 @@
 								<h2>Image</h2>
 								<h3>Fit</h3>
 								<h3>Left &amp; Right</h3>
-								<p><span class="image left"><img src="../images/pic14.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-								<p><span class="image right"><img src="../images/pic15.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+								<p><span class="image left"><img src="${project}/moviePoster/${moviePosterSysName}" alt="" /></span>${dto.movieInfo}</p>
 							</section>
 							
 						</div>

@@ -17,4 +17,5 @@
 	<context:component-scan base-package="userHandler" />
 	<context:component-scan base-package="reservHandler" />
 	<context:component-scan base-package="movieHandler" />
+	<context:component-scan base-package="keyword" />
 </beans>

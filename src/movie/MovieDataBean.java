@@ -1,15 +1,16 @@
 package movie;
 
 public class MovieDataBean {
-	private int movieId;	// bigint
-	private String movieTitle;
-	private String movieGenre;
-	private String moviePosterOriName;
-	private String moviePosterSysName;
-	private String movieTags;
-	private String movieAge;
-	private String movieInfo;
-	private int movieTime;
+	private int movieId;				// bigint
+	private String movieTitle;			// 제목
+	private String movieGenre;			// 장르
+	private String moviePosterDir;		// 경로명
+	private String moviePosterOriName;	// 경로명 오리지널
+	private String moviePosterSysName;	// 경로명 시스템명
+	private String movieTags;			// 태그
+	private String movieAge;			// 연령등급
+	private String movieInfo;			// 정보
+	private int movieTime;				// 상영시간
 	
 	public int getMovieId() {
 		return movieId;
@@ -28,6 +29,12 @@ public class MovieDataBean {
 	}
 	public void setMovieGenre(String movieGenre) {
 		this.movieGenre = movieGenre;
+	}
+	public String getMoviePosterDir() {
+		return moviePosterDir;
+	}
+	public void setMoviePosterDir(String moviePosterDir) {
+		this.moviePosterDir = moviePosterDir;
 	}
 	public String getMoviePosterOriName() {
 		return moviePosterOriName;
