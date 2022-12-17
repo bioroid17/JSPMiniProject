@@ -63,7 +63,10 @@
 									<a href="">
 										<h2>봄</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>${dto.b_Name}</p>
+											<p>${dto.b_Num}</p>
+											<p>${dto.b_Writer}</p>
+											<p>${dto.b_SangSae}</p>
 										</div>
 									</a>
 								</article>
