@@ -60,8 +60,8 @@
 									<span class="image">
 										<img src="../images/pic01.jpg" alt="" />
 									</span>
-									<a href="books/book_keyword.do">
-										<h2>Nice Book</h2>
+									<a href="">
+										<h2>봄</h2>
 										<div class="content">
 											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
 										</div>
@@ -73,17 +73,8 @@
 									</span>
 									
 									<c:if test="${sessionScope.memId eq null}">
-										<a href="user/airportmain.do">
-											<h2>Airfort</h2>
-											<div class="content">
-												<p>항공기 예약 시스템</p>
-											</div>
-										</a>
-									</c:if>
-									
-									<c:if test="${sessionScope.memId ne null}">
-										<a href="user/airportmain.do?userId=${sessionScope.memId}">
-											<h2>Airport</h2>
+										<a href="">
+											<h2>여름</h2>
 											<div class="content">
 												<p>항공기 예약 시스템</p>
 											</div>
@@ -96,7 +87,7 @@
 										<img src="../images/pic03.jpg" alt="" />
 									</span>
 									<a href="generic.html">
-										<h2>Feugiat</h2>
+										<h2>가을</h2>
 										<div class="content">
 											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
 										</div>
@@ -107,7 +98,7 @@
 										<img src="../images/pic04.jpg" alt="" />
 									</span>
 									<a href="generic.html">
-										<h2>Tempus</h2>
+										<h2>겨울</h2>
 										<div class="content">
 											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
 										</div>
@@ -168,39 +159,7 @@
 										</div>
 									</a>
 								</article>
-								<article class="style5">
-									<span class="image">
-										<img src="../images/pic10.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Ultricies</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style6">
-									<span class="image">
-										<img src="../images/pic11.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Dictum</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style4">
-									<span class="image">
-										<img src="../images/pic12.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Pretium</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
+								
 							</section>
 						</div>
 					</div>
