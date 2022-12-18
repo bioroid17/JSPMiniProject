@@ -9,7 +9,7 @@
  	<!-- 키워드 선택 -->
 	
 	<select id="keyword" resultType="book.BookDataBean">
- 		SELECT * FROM book_detail
+ 		SELECT * FROM book_detail 
   	</select>
 	
 	

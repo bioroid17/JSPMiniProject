@@ -1,5 +1,7 @@
 package keyword;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,13 +15,14 @@ import book.BookDataBean;
 @Controller
 public class bookPageHandler implements CommandHandler{
 	@Resource
-	private BookDao Bookdao;
+	private BookDao bookdao;
 	
 	@RequestMapping("books/book_keyword")
 	
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		BookDataBean dto = new BookDataBean();
+//		String b_Name = request.getParameter("b_Name"); 
+		List<BookDataBean> dto = bookdao.selectBook();
 		request.setAttribute("dto", dto);
 		return new ModelAndView ("books/book_keyword");
 	}
