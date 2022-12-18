@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import movie.MovieDAO;
+import movie.MovieDataBean;
 
 @Controller
 public class MovieUpdateFormHandler implements CommandHandler{
@@ -18,7 +19,10 @@ public class MovieUpdateFormHandler implements CommandHandler{
 	@RequestMapping("movie/movieUpdateForm")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-
+		int movieId = Integer.parseInt(request.getParameter("movieId"));
+		MovieDataBean dto = movieDao.getMovie(movieId);
+		
+		request.setAttribute("dto", dto);
 		return new ModelAndView ("movie/movieUpdateForm");
 	}
 }

@@ -38,17 +38,7 @@
 						</div>
 					</header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="${project}/index.html">Home</a></li>
-							<li><a href="${project}/generic.html">Ipsum veroeros</a></li>
-							<li><a href="${project}/generic.html">Tempus etiam</a></li>
-							<li><a href="${project}/generic.html">Consequat dolor</a></li>
-							<li><a href="${project}/elements.html">Elements</a></li>
-						</ul>
-					</nav>
+				<%@include file="menu.jsp"%>
 
 				<!-- Main -->
 					<div id="main">
@@ -58,14 +48,15 @@
 							<!-- Text -->
 							<section>
 								<h2>Form</h2>
-								<form method="post" action="#">
+								<form method="post" action="movieDeletePro.do">
+									<input type="hidden" name="movieId" value="${movieId}">
 									<div class="row gtr-uniform">
 										<div class="col-12">
-											<input type="password" name="password" id="password" value="" placeholder="비밀번호 입력">
+											<input type="password" name="passwd" id="passwd" value="" placeholder="비밀번호 입력">
 										</div>
 										<div class="col-12">
 											<ul class="actions">
-												<li><input type="submit" value="등록" class="primary" /></li>
+												<li><input type="submit" value="삭제" class="primary" /></li>
 												<li><input type="reset" value="취소" /></li>
 											</ul>
 										</div>

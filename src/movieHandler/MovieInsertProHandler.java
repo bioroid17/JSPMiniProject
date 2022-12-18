@@ -48,6 +48,8 @@ public class MovieInsertProHandler implements CommandHandler{
 		dto.setMovieAge(multi.getParameter("movieAge"));
 		dto.setMovieInfo(multi.getParameter("movieInfo"));
 		dto.setMovieTime(Integer.parseInt(multi.getParameter("movieTime")));
+		dto.setMovieDirector(multi.getParameter("movieDirector"));
+		dto.setMovieActors(multi.getParameter("movieActors"));
 		
 		int result = movieDao.insertMovie(dto);
 		

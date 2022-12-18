@@ -14,6 +14,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="${project}/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="${project}/assets/css/noscript.css" /></noscript>
+		<script src="${project}/Mini/movie/script.js"></script>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -38,17 +39,7 @@
 						</div>
 					</header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="../index.html">Home</a></li>
-							<li><a href="../generic.html">Ipsum veroeros</a></li>
-							<li><a href="../generic.html">Tempus etiam</a></li>
-							<li><a href="../generic.html">Consequat dolor</a></li>
-							<li><a href="../elements.html">Elements</a></li>
-						</ul>
-					</nav>
+				<%@include file="menu.jsp"%>
 
 				<!-- Main -->
 					<div id="main">
@@ -58,13 +49,13 @@
 							<!-- Text -->
 							<section>
 								<h2>Form</h2>
-								<form method="post" action="adminLoginPro.do">
+								<form method="post" name="adminLoginForm" action="adminLoginPro.do" onsubmit="return logincheck()" >
 									<div class="row gtr-uniform">
 										<div class="col-12">
-											<input type="text" name="adminId" id="adminId" value="" placeholder="관리자 아이디 입력">
+											<input type="text" name="adminId" id="adminId" placeholder="관리자 아이디 입력">
 										</div>
 										<div class="col-12">
-											<input type="password" name="adminPasswd" id="adminPasswd" value="" placeholder="비밀번호 입력">
+											<input type="password" name="adminPasswd" id="adminPasswd" placeholder="비밀번호 입력">
 										</div>
 										<div class="col-12">
 											<ul class="actions">

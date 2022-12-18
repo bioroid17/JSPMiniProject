@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@include file="setting.jsp"%>
 <!DOCTYPE HTML>
 <!--
 	Phantom by HTML5 UP
@@ -37,81 +38,64 @@
 						</div>
 					</header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="../index.html">Home</a></li>
-							<li><a href="../generic.html">Ipsum veroeros</a></li>
-							<li><a href="../generic.html">Tempus etiam</a></li>
-							<li><a href="../generic.html">Consequat dolor</a></li>
-							<li><a href="../elements.html">Elements</a></li>
-						</ul>
-					</nav>
+				<%@include file="menu.jsp"%>
 
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
 							<h1>Generic Page</h1>
-							<span class="image main"><img src="${project}/${moviePosterSysName}" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-						
 						
 							<section>
 								<h2>영화</h2>
 								<div class="row">
 									<div class="col-6 col-12-medium">
-										<span class="image main"><img src="${project}/moviePoster/${moviePosterSysName}" alt="" /></span>
+										<span class="image main"><img src="${project}/moviePoster/${dto.moviePosterSysName}" alt="" /></span>
 									</div>
 									<div class="col-6 col-12-medium">
 										<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th colspan='2'>${dto.movieTitle}</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>평점</td>
-													<td>${dto.movieTitle}</td>
-												</tr>
-												<tr>
-													<td>상영시간</td>
-													<td>${dto.movieTime}</td>
-												</tr>
-												<tr>
-													<td>개봉일</td>
-													<td>${dto.movieTitle}</td>
-												</tr>
-												<tr>
-													<td>장르</td>
-													<td>${dto.movieGenre}</td>
-												</tr>
-												<tr>
-													<td>감독</td>
-													<td>${dto.movieTitle}</td>
-												</tr>
-												<tr>
-													<td>출연진</td>
-													<td>${dto.movieTitle}</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
+											<table>
+												<thead>
+													<tr>
+														<th colspan='2'>${dto.movieTitle}</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td style="width:25%">상영시간</td>
+														<td>${dto.movieTime}</td>
+													</tr>
+													<tr>
+														<td>장르</td>
+														<td>${dto.movieGenre}</td>
+													</tr>
+													<tr>
+														<td>감독</td>
+														<td>${dto.movieDirector}</td>
+													</tr>
+													<tr>
+														<td>출연진</td>
+														<td>${dto.movieActors}</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
 									</div>
 								</div>
 							</section>
 							<hr>
 							<section>
-								<h2>Image</h2>
-								<h3>Fit</h3>
-								<h3>Left &amp; Right</h3>
-								<p><span class="image left"><img src="${project}/moviePoster/${moviePosterSysName}" alt="" /></span>${dto.movieInfo}</p>
+								<h2>시놉시스</h2>
+								<p>${dto.movieInfo}</p>
 							</section>
-							
+				
+							<c:if test="${sessionScope.adminId ne null}">
+								<div class="col-12">
+									<ul class="actions">
+										<li><input type="button" value="수정" class="primary" onclick="location='movieUpdateForm.do?movieId=${dto.movieId}'"/></li>
+										<li><input type="button" value="삭제" class="primary" onclick="location='movieDeleteForm.do?movieId=${dto.movieId}'"/></li>
+									</ul>
+								</div>
+							</c:if>
 						</div>
 					</div>
 					

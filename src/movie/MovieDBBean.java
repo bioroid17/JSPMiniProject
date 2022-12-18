@@ -38,13 +38,25 @@ public class MovieDBBean implements MovieDAO{
 	}
 
 	@Override
+	public int checkAdminPasswd(String adminId, String adminPasswd) {
+		int result = 0;
+		AdminDataBean dto = getAdmin(adminId);
+		if(adminPasswd.equals(dto.getAdminPasswd()))
+			result = 1;
+		else
+			result = 0;
+		
+		return result;
+	}
+
+	@Override
 	public MovieDataBean getMovie(int movieId) {
 		return SqlMapClient.getSession().selectOne("Movies.getMovie", movieId);
 	}
 
 	@Override
 	public List<MovieDataBean> getMovies(Map<String, String> map) {
-		return SqlMapClient.getSession().selectList("Movies.getMovies");
+		return SqlMapClient.getSession().selectList("Movies.getMovies", map);
 	}
 
 	@Override

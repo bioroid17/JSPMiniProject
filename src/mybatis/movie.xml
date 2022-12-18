@@ -14,9 +14,10 @@
 	</select>
 	
 	<select id="getMovies" parameterType="java.util.Map" resultType="movie.MovieDataBean">
-		select movieId,movieTitle,movieGenre,moviePosterDir,moviePosterOriName,moviePosterSysName,movieTags,movieAge,movieInfo,movieTime,r 
-			from (select movieId,movieTitle,movieGenre,moviePosterOriName,moviePosterSysName,movieTags,movieAge,movieInfo,movieTime,rownum r
-			from (select movieId,movieTitle,movieGenre,moviePosterOriName,moviePosterSysName,movieTags,movieAge,movieInfo,movieTime from movie) sub2 order by movieId desc) sub1
+		select movieId,movieTitle,movieGenre,moviePosterDir,moviePosterOriName,moviePosterSysName,movieTags,movieAge,movieInfo,movieTime,movieDirector,movieActors,r 
+			from (select movieId,movieTitle,movieGenre,moviePosterDir,moviePosterOriName,moviePosterSysName,movieTags,movieAge,movieInfo,movieTime,movieDirector,movieActors,@rownum := @rownum+1 as r
+			from (select movieId,movieTitle,movieGenre,moviePosterDir,moviePosterOriName,moviePosterSysName,movieTags,movieAge,movieInfo,movieTime,movieDirector,movieActors,@rownum := 0 from movie)
+			sub2 order by movieId desc) sub1
 			where r &gt;= #{start} and r &lt;= #{end}
 	</select>
 	
@@ -29,14 +30,14 @@
 	</select>
 	
 	<insert id="insertMovie" parameterType="movie.MovieDataBean" useGeneratedKeys="true" keyProperty="movieId">
-		insert into movie(movieTitle,movieGenre,moviePosterDir,moviePosterOriName,moviePosterSysName,movieTags,movieAge,movieInfo,movieTime)
-		values(#{movieTitle},#{movieGenre},#{moviePosterDir},#{moviePosterOriName},#{moviePosterSysName},#{movieTags},#{movieAge},#{movieInfo},#{movieTime})
+		insert into movie(movieTitle,movieGenre,moviePosterDir,moviePosterOriName,moviePosterSysName,movieTags,movieAge,movieInfo,movieTime,movieDirector,movieActors)
+		values(#{movieTitle},#{movieGenre},#{moviePosterDir},#{moviePosterOriName},#{moviePosterSysName},#{movieTags},#{movieAge},#{movieInfo},#{movieTime},#{movieDirector},#{movieActors})
 	</insert>
 	
 	<update id="updateMovie" parameterType="movie.MovieDataBean">
 		update movie set movieTitle=#{movieTitle},movieGenre=#{movieGenre},moviePosterDir=#{moviePosterDir},
 		moviePosterOriName=#{moviePosterOriName},moviePosterSysName=#{moviePosterSysName},movieTags=#{movieTags},
-		movieAge=#{movieAge},movieInfo=#{movieInfo},movieTitle=#{movieTime} where movieId=#{movieId}
+		movieAge=#{movieAge},movieInfo=#{movieInfo},movieTitle=#{movieTime},movieDirector=#{movieDirector},movieActors=#{movieActors} where movieId=#{movieId}
 	</update>
 	
 	<delete id="deleteMovie" parameterType="int">
