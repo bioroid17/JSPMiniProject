@@ -35,14 +35,11 @@ public class ReservContentHandler implements CommandHandler{
 		String userId = request.getParameter("userId");
 		int reNum = Integer.parseInt(request.getParameter("reNum"));
 		int reservNum=0;
-		int count = 0;
+
 		UserDataBean dto = userDao.getUser(userId);
 		AirDataBean ato = airDao.getAirContent(reNum);
-		List<ReservDataBean> rto = reservDao.getMyList(userId);
 		
-//		count = reservDao.reservCountUser(userId);
-//		request.setAttribute("count", count);
-//		
+		List<ReservDataBean> rto = reservDao.getMyList(userId);
 //		if(count != 0) {
 //			List<AirDataBean> rto = reservDao.getCheck(reNum);
 //			request.setAttribute("reNum", reNum);
@@ -50,6 +47,7 @@ public class ReservContentHandler implements CommandHandler{
 //		}
 		
 		request.setAttribute("rto", rto);
+		
 		request.setAttribute("userId", userId);
 		request.setAttribute("reNum", reNum);
 		request.setAttribute("dto", dto); // 유저

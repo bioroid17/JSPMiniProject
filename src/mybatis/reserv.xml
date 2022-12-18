@@ -7,8 +7,22 @@
  <mapper namespace="ReservInfo">
  
 	<insert id="insertReserv" parameterType="reserv.ReservDataBean">
-		insert into reservation(reservNum, reNum, userId, reservAir, reservPerseon, seatLevel, seatNum)
-			values(#{reservNum}, #{reNum}, #{userId}, #{reservAir}, #{reservPerseon}, #{seatLevel}, #{seatNum})
+		<!-- insert into reservation(reservNum, reNum, userId, reservAir, reservPerseon, seatLevel, seatNum)
+			values(#{reservNum}, #{reNum}, #{userId}, #{reservAir}, #{reservPerseon}, #{seatLevel}, #{seatNum}) -->
+	
+			INSERT INTO reservation
+				(reservNum, reNum, userId, reservAir, reservPerseon, seatLevel, seatNum)
+				SELECT #{reservNum}, #{reNum}, #{userId}, #{reservAir}, #{reservPerseon}, #{seatLevel}, #{seatNum}
+				FROM DUAL
+				WHERE NOT EXISTS (
+			    SELECT 
+					*
+			    FROM 
+					reservation
+			    WHERE 
+					reNum = #{reNum}
+			        AND userId = #{userId}
+			)LIMIT 1
 	</insert>
 	
 	<select id="reservCount" resultType="Integer">
@@ -43,11 +57,45 @@
 			where u.userId=#{userId}
 		    order by r.reservNum DESC
 	</select>
-	
-	<!-- <select id="reservCountUser" resultType="Integer">
- 		select count(*) from reservation where userId = #{userId}
+ 	
+ 	<select id="reservCheck" resultType="reserv.ReservDataBean">
+ 		select 
+			r.reservNum, 
+		    r.reservAir,
+		    r.reservPerseon, 
+		    r.seatLevel,
+		    r.seatNum,
+		    u.userId,
+		    u.userName,
+		    a.reNum,
+		    a.startCountry,
+		    a.startCity,
+		    a.finishCountry,
+		    a.finishCity,
+		    a.startDate,
+		    a.startTime,
+		    a.finishDate,
+		    a.finishTime
+		    
+		    from reservation r
+				inner join 
+					user u on(r.userId = u.userId)
+					
+				inner join
+					airport a on (r.reNum = a.reNum)
+			where u.userId=#{userId}
+		    order by r.reservNum DESC
  	</select>
-	<select id="getCheck" resultType="reserv.ReservDataBean">
+ 	
+ 	<select id = "getReserv" parameterType = "Integer" resultType = "reserv.ReservDataBean">
+ 		select * from reservation where reservNum = #{reservNum}
+ 	</select>
+ 	
+ 	<delete id = "deleteReserv" parameterType="Integer">
+ 		delete from reservation where reservNum = #{reservNum}
+ 	</delete>
+ 	 
+	<!-- <select id="getCheck" resultType="reserv.ReservDataBean">
  		select * from reservation where reNum = #{reNum}
  	</select> -->
  	

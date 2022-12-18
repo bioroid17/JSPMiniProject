@@ -77,7 +77,7 @@
 													<div style="display:flex; justify-content:center; margin-bottom: -2%;">
 													
 														<div>
-															<h5>예약자 이름</h5>
+															<h5>예약자</h5>
 															<h5>&nbsp;${rto.userName}</h5>
 														</div>
 														
@@ -92,20 +92,20 @@
 														
 														<div>
 															<h4>${rto.startCountry} - ${rto.startCity}</h4>
-															<h5>${rto.startDate} - ${rto.startTime}</h5>
+															<h5>일시 : ${rto.startDate}<br> 시간 : ${rto.startTime}</h5>
 														</div>
 														
-														<span style="width:100px;"></span>
+														<span style="width:4%;"></span>
 														
 														<div>
 															<span><img src="../../images/airplane.png" alt="" /></span>
 														</div>
 														
-														<span style="width:100px;"></span>
+														<span style="width:4%;"></span>
 														
 														<div>
 															<h4>${rto.finishCountry} - ${rto.finishCity}</h4>
-															<h5>${rto.finishDate} - ${rto.finishTime}</h5>
+															<h5>일시 : ${rto.finishDate}<br> 시간 : ${rto.finishTime}</h5>
 														</div>
 														
 														<span style="width:5%;"></span>
@@ -114,7 +114,10 @@
 															<h5>${rto.seatLevel} / ${rto.reservPerseon}명</h5>
 															<h5>${rto.seatNum}</h5>
 														</div>
-																		
+														
+														<span style="width:4%;"></span>
+														
+														<input type="button" value="취소" onclick="location='reservdeleteForm.do?userId=${dto.userId}&reservNum=${rto.reservNum}'" />
 													</div>
 													<hr>
 												</c:forEach>

@@ -4,8 +4,9 @@
 
 <c:if test="${result eq 0}">
 	<script type="text/javascript">	
-		alert("등록 실패");
+		alert("이미 예약이 완료 되어있는 항공편 입니다.");
 	</script>
+	<meta http-equiv="refresh" content="0; url=reservmain.do?userId=${sessionScope.memId}">
 </c:if>
 <c:if test="${result != 0}">
     <c:redirect url="reservmain.do">

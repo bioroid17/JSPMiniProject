@@ -190,3 +190,24 @@ function aircheck() {
 		}
 	}
 }
+
+
+function reservinputCheck() {
+	let count = $("input:checked[type='checkbox']").length;
+	
+	var selectperseon = $("#seatMember option:selected").val();
+	if(selectperseon == "10"){
+		var perseon = $("#Membernum1").val();
+	} else {
+		var perseon = $("#seatMember option:selected").val();
+	}
+	
+	if(!$("input:checked[name='seatNum'").is(":checked")){
+		alert('좌석을 선택하세요');
+		return false;
+	} else if (count < perseon) {
+		alert("좌석이 선택하신 인원수보다 적습니다.");
+		return false;
+		
+	}
+}

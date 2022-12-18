@@ -53,6 +53,7 @@ public class ReservInputProHandler implements CommandHandler{
 		}
 		rto.setSeatNum(array);
 		
+//		int resultCheck = reservDao.reservCheck(userId, reNum);
 		int result = reservDao.insertReserv(rto);
 		request.setAttribute("result", result);
 		

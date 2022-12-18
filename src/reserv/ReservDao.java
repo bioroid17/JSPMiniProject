@@ -8,6 +8,9 @@ public interface ReservDao {
 	public int reservCount(String userId); // 갯수 확인
 	public List<ReservDataBean> getMyList(String userId); // 내 예약 보기
 	
+	public ReservDataBean getReserv(int reservNum); // 체크용
+	public int reservCheck(int reservNum, String userId); //체크용
+	public int deleteReserv(int reservNum);
 //	public int reservCountUser(String userId);
 //	public List<AirDataBean> getCheck(int reNum);
 }
