@@ -29,6 +29,6 @@
 		<mapper resource="mybatis/air.xml"/>
 		<mapper resource="mybatis/reserv.xml"/>
 		<mapper resource="mybatis/movie.xml"/>
-		<!-- <mapper resource="mybatis/book.xml"/> -->
+		<mapper resource="mybatis/book.xml"/>
 	</mappers>
 </configuration>

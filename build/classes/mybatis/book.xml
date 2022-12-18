@@ -8,16 +8,9 @@
  	
  	<!-- 키워드 선택 -->
 	
-	<select id="keyword" resultType="">
- 		select * from keyword
- 	</select>
+	<select id="keyword" resultType="book.BookDataBean">
+ 		SELECT * FROM book_detail 
+  	</select>
 	
-	<select id="getairList" resultType="reserv.AirDataBean" parameterType="java.util.Map">
-		select * from airport order by reNum desc
-	</select>
-	
-	<select id="getAirContent" resultType="reserv.AirDataBean" parameterType="Integer">
-		select * from airport where reNum=#{reNum}
-	</select>
 	
  </mapper>

@@ -7,6 +7,7 @@ public interface MovieDAO {
 	public AdminDataBean getAdmin(String adminId);
 	public int checkAdmin(String adminId);
 	public int checkAdminId(String adminId, String adminPasswd);
+	public int checkAdminPasswd(String adminId, String adminPasswd);
 	public MovieDataBean getMovie(int movieId);
 	public List<MovieDataBean> getMovies(Map<String, String> map);
 	public int getMovieCount();

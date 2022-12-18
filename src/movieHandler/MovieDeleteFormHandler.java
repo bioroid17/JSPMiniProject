@@ -18,7 +18,8 @@ public class MovieDeleteFormHandler implements CommandHandler{
 	@RequestMapping("movie/movieDeleteForm")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-
+		int movieId = Integer.parseInt(request.getParameter("movieId"));
+		request.setAttribute("movieId", movieId);
 		return new ModelAndView ("movie/movieDeleteForm");
 	}
 }

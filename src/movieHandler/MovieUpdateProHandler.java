@@ -39,6 +39,7 @@ public class MovieUpdateProHandler implements CommandHandler{
 		String moviePosterSysName = multi.getFilesystemName("moviePoster");		// 파일 이름 정책으로 변화되는 실제 파일 이름
 
 		////////////////////////////////////////////////////////////////////////////////////////////
+		dto.setMovieId(Integer.parseInt(multi.getParameter("movieId")));
 		dto.setMovieTitle(multi.getParameter("movieTitle"));
 		dto.setMovieGenre(multi.getParameter("movieGenre"));
 		dto.setMoviePosterDir(moviePosterDir);
@@ -48,6 +49,8 @@ public class MovieUpdateProHandler implements CommandHandler{
 		dto.setMovieAge(multi.getParameter("movieAge"));
 		dto.setMovieInfo(multi.getParameter("movieInfo"));
 		dto.setMovieTime(Integer.parseInt(multi.getParameter("movieTime")));
+		dto.setMovieDirector(multi.getParameter("movieDirector"));
+		dto.setMovieActors(multi.getParameter("movieActors"));
 		
 		int result = movieDao.updateMovie(dto);
 		

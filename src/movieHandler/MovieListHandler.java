@@ -46,7 +46,6 @@ public class MovieListHandler implements CommandHandler{
 		end = start + pageSize - 1;						// 41 + 10 - 1 = 							50
 		
 		count = movieDao.getMovieCount();
-		
 		if(end > count)			// 글의 총 갯수가 end 보다 크면 end값을 count로 한다.
 			end = count;
 		

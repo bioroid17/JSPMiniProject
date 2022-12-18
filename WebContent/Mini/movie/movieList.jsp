@@ -38,25 +38,7 @@
 						</div>
 					</header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<c:if test="${sessionScope.adminId ne null}">
-							<h2>안녕하세요, 관리자님</h2>
-						</c:if>
-						<c:if test="${sessionScope.adminId eq null}">
-							<h2>안녕하세요</h2>
-						</c:if>
-						<ul>
-							<c:if test="${sessionScope.adminId ne null}">
-								<li><a href="adminLogout.do">로그아웃</a></li>
-								<li><a href="movieInsertForm.do">영화 등록</a></li>
-							</c:if>
-							<c:if test="${sessionScope.adminId eq null}">
-								<li><a href="adminLoginForm.do">관리자 로그인</a></li>
-							</c:if>
-							<li><a href="../index.html">Home</a></li>
-						</ul>
-					</nav>
+				<%@include file="menu.jsp"%>
 
 				<!-- Main -->
 					<div id="main">
@@ -70,7 +52,7 @@
 								<c:forEach var="dto" items="${dtos}">
 									<article class="style1">
 										<span class="image">
-											<img src="../images/pic01.jpg" alt="" />
+											<img src="${project}/moviePoster/${dto.moviePosterSysName}" alt="" />
 										</span>
 										<a href="movieInfo.do?movieId=${dto.movieId}">
 											<h2>${dto.movieTitle}</h2>
@@ -81,6 +63,36 @@
 									</article>
 								</c:forEach>
 							</section>
+							<br>
+							<br>
+							<br>
+							<br>
+							<c:if test="${count gt 0}">
+								<ul class="actions">
+									<c:if test="${startPage gt pageBlock}">
+										<li class="page-item">
+											<input type="button" value="이전" class="primary" onclick="location='movieList.do?pageNum=${startPage - pageBlock}'"/>
+										</li>
+									</c:if>
+									<c:forEach var="i" begin="${startPage}" end="${endPage}">
+										<c:if test="${i eq currentPage}">
+											<li class="page-item">
+												<input type="button" value="${i}" class="primary" disabled/>
+											</li>
+										</c:if>
+										<c:if test="${i ne currentPage}">
+											<li class="page-item">
+												<input type="button" value="${i}" class="primary" onclick="location='movieList.do?pageNum=${i}'"/>
+											</li>
+										</c:if>
+									</c:forEach>
+									<c:if test="${pageCount gt endPage}">
+										<li class="page-item">
+											<input type="button" value="다음" class="primary" onclick="location='movieList.do?pageNum=${startPage + pageBlock}'"/>
+										</li>
+									</c:if>
+								</ul>
+							</c:if>
 						</div>
 					</div>
 

@@ -11,6 +11,8 @@ public class MovieDataBean {
 	private String movieAge;			// 연령등급
 	private String movieInfo;			// 정보
 	private int movieTime;				// 상영시간
+	private String movieDirector;		// 감독
+	private String movieActors;			// 출연진
 	
 	public int getMovieId() {
 		return movieId;
@@ -71,6 +73,18 @@ public class MovieDataBean {
 	}
 	public void setMovieTime(int movieTime) {
 		this.movieTime = movieTime;
+	}
+	public String getMovieDirector() {
+		return movieDirector;
+	}
+	public void setMovieDirector(String movieDirector) {
+		this.movieDirector = movieDirector;
+	}
+	public String getMovieActors() {
+		return movieActors;
+	}
+	public void setMovieActors(String movieActors) {
+		this.movieActors = movieActors;
 	}
 	
 	

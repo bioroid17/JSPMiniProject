@@ -37,17 +37,7 @@
 						</div>
 					</header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="../index.html">Home</a></li>
-							<li><a href="../generic.html">Ipsum veroeros</a></li>
-							<li><a href="../generic.html">Tempus etiam</a></li>
-							<li><a href="../generic.html">Consequat dolor</a></li>
-							<li><a href="../elements.html">Elements</a></li>
-						</ul>
-					</nav>
+				<%@include file="menu.jsp"%>
 
 				<!-- Main -->
 					<div id="main">
@@ -57,31 +47,23 @@
 							<!-- Text -->
 							<section>
 								<h2>Form</h2>
-								<form method="post" action="#">
+								<form method="post" action="movieUpdatePro.do" enctype="multipart/form-data">
+									<input type="hidden" name="movieId" id="movieId" value="${dto.movieId}">
 									<div class="row gtr-uniform">
 										<div class="col-6 col-12-xsmall">
-											<input type="text" name="movieTitle" id="movieTitle" value="" placeholder="영화 제목">
+											<input type="text" name="movieTitle" id="movieTitle" value="${dto.movieTitle}" placeholder="영화 제목">
 										</div>
 										<div class="col-6 col-12-xsmall">
-											<input type="file" name="moviePoster" id="moviePoster">
+											<input type="file" name="moviePoster" id="moviePoster" value="">
 										</div>
 										<div class="col-4 col-12-xsmall">
-											<input type="text" name="movieTime" id="movieTime" value="" placeholder="러닝 타임">
+											<input type="text" name="movieTime" id="movieTime" value="${dto.movieTime}" placeholder="러닝 타임">
 										</div>
 										<div class="col-4 col-12-xsmall">
-											<input type="text" name="movieTags" id="movieTags" value="" placeholder="태그 입력">
+											<input type="text" name="movieTags" id="movieTags" value="${dto.movieTags}" placeholder="태그 입력">
 										</div>
 										<div class="col-4 col-12-xsmall">
-											<select name="movieGenre" id="movieGenre">
-												<option value="0">- 장르를 선택하세요 -</option>
-												<option value="1">코미디</option>
-												<option value="1">액션</option>
-												<option value="1">스릴러</option>
-												<option value="1">공포</option>
-												<option value="1">SF</option>
-												<option value="1">범죄</option>
-												<option value="1">애니메이션</option>
-											</select>
+											<input type="text" name="movieGenre" id="movieGenre" value="${dto.movieGenre}" placeholder="장르 입력">
 										</div>
 										<div class="col-2 col-10-small">
 											<input type="radio" id="ageall" name="movieAge" value="all" checked>
@@ -103,19 +85,24 @@
 											<input type="radio" id="limited" name="movieAge" value="limited">
 											<label for="limited">제한관람가</label>
 										</div>
+										<div class="col-6 col-12-xsmall">
+											<input type="text" name="movieDirector" id="movieDirector" value="${dto.movieDirector}" placeholder="감독 이름">
+										</div>
+										<div class="col-6 col-12-xsmall">
+											<input type="text" name="movieActors" id="movieActors" value="${dto.movieActors}" placeholder="출연진 이름">
+										</div>
 										<div class="col-12">
-											<textarea name="demo-message" id="demo-message" placeholder="영화의 내용을 입력하세요." rows="10"></textarea>
+											<textarea name="movieInfo" id="movieInfo" placeholder="영화의 내용을 입력하세요." rows="10">${dto.movieInfo}</textarea>
 										</div>
 										<div class="col-12">
 											<ul class="actions">
-												<li><input type="submit" value="등록" class="primary" /></li>
+												<li><input type="submit" value="수정" class="primary" /></li>
 												<li><input type="reset" value="취소" /></li>
 											</ul>
 										</div>
 									</div>
 								</form>
 							</section>
-
 						</div>
 					</div>
 
