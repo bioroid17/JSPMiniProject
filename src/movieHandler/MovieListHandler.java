@@ -23,8 +23,8 @@ public class MovieListHandler implements CommandHandler{
 	@RequestMapping("movie/movieList")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		int pageSize = 10; // 한 페이지에 출력할 최대 글의 개수
-		int pageBlock = 3;
+		int pageSize = 15; // 한 페이지에 출력할 최대 글의 개수
+		int pageBlock = 10;
 		
 		int count = 0;
 		String pageNum = null;

@@ -1,36 +1,120 @@
 package movie;
 
 public class MovieDataBean {
-	private int movieId;				// bigint
-	private String movieTitle;			// 제목
-	private String movieGenre;			// 장르
-	private String moviePosterDir;		// 경로명
-	private String moviePosterOriName;	// 경로명 오리지널
-	private String moviePosterSysName;	// 경로명 시스템명
-	private String movieTags;			// 태그
-	private String movieAge;			// 연령등급
-	private String movieInfo;			// 정보
-	private int movieTime;				// 상영시간
-	private String movieDirector;		// 감독
-	private String movieActors;			// 출연진
-	
-	public int getMovieId() {
-		return movieId;
+	String movieCd;
+	String movieNm;
+	String movieNmEn;
+	String prdtYear;
+	String openDt;
+	String typeNm;
+	String prdtStatNm;
+	String nationAlt;
+	String genreAlt;
+	String repNationNm;
+	String repGenreNm;
+	String directorNms;
+	String directorNmEns;
+	String companyNms;
+	String companyNmEns;
+	String companyPartNms;
+	String moviePosterDir;
+	String moviePosterOriName;
+	String moviePosterSysName;
+	public String getMovieCd() {
+		return movieCd;
 	}
-	public void setMovieId(int movieId) {
-		this.movieId = movieId;
+	public void setMovieCd(String movieCd) {
+		this.movieCd = movieCd;
 	}
-	public String getMovieTitle() {
-		return movieTitle;
+	public String getMovieNm() {
+		return movieNm;
 	}
-	public void setMovieTitle(String movieTitle) {
-		this.movieTitle = movieTitle;
+	public void setMovieNm(String movieNm) {
+		this.movieNm = movieNm;
 	}
-	public String getMovieGenre() {
-		return movieGenre;
+	public String getMovieNmEn() {
+		return movieNmEn;
 	}
-	public void setMovieGenre(String movieGenre) {
-		this.movieGenre = movieGenre;
+	public void setMovieNmEn(String movieNmEn) {
+		this.movieNmEn = movieNmEn;
+	}
+	public String getPrdtYear() {
+		return prdtYear;
+	}
+	public void setPrdtYear(String prdtYear) {
+		this.prdtYear = prdtYear;
+	}
+	public String getOpenDt() {
+		return openDt;
+	}
+	public void setOpenDt(String openDt) {
+		this.openDt = openDt;
+	}
+	public String getTypeNm() {
+		return typeNm;
+	}
+	public void setTypeNm(String typeNm) {
+		this.typeNm = typeNm;
+	}
+	public String getPrdtStatNm() {
+		return prdtStatNm;
+	}
+	public void setPrdtStatNm(String prdtStatNm) {
+		this.prdtStatNm = prdtStatNm;
+	}
+	public String getNationAlt() {
+		return nationAlt;
+	}
+	public void setNationAlt(String nationAlt) {
+		this.nationAlt = nationAlt;
+	}
+	public String getGenreAlt() {
+		return genreAlt;
+	}
+	public void setGenreAlt(String genreAlt) {
+		this.genreAlt = genreAlt;
+	}
+	public String getRepNationNm() {
+		return repNationNm;
+	}
+	public void setRepNationNm(String repNationNm) {
+		this.repNationNm = repNationNm;
+	}
+	public String getRepGenreNm() {
+		return repGenreNm;
+	}
+	public void setRepGenreNm(String repGenreNm) {
+		this.repGenreNm = repGenreNm;
+	}
+	public String getDirectorNms() {
+		return directorNms;
+	}
+	public void setDirectorNms(String directorNms) {
+		this.directorNms = directorNms;
+	}
+	public String getDirectorNmEns() {
+		return directorNmEns;
+	}
+	public void setDirectorNmEns(String directorNmEns) {
+		this.directorNmEns = directorNmEns;
+	}
+	public String getCompanyNms() {
+		return companyNms;
+	}
+	public void setCompanyNms(String companyNms) {
+		this.companyNms = companyNms;
+	}
+	public String getCompanyNmEns() {
+		return companyNmEns;
+	}
+	public void setCompanyNmEns(String companyNmEns) {
+		this.companyNmEns = companyNmEns;
+	}
+	public String getCompanyPartNms() {
+		return companyPartNms;
+	}
+	public void setCompanyPartNms(String companyPartNms) {
+		this.companyPartNms = companyPartNms;
 	}
 	public String getMoviePosterDir() {
 		return moviePosterDir;
@@ -50,42 +134,4 @@ public class MovieDataBean {
 	public void setMoviePosterSysName(String moviePosterSysName) {
 		this.moviePosterSysName = moviePosterSysName;
 	}
-	public String getMovieTags() {
-		return movieTags;
-	}
-	public void setMovieTags(String movieTags) {
-		this.movieTags = movieTags;
-	}
-	public String getMovieAge() {
-		return movieAge;
-	}
-	public void setMovieAge(String movieAge) {
-		this.movieAge = movieAge;
-	}
-	public String getMovieInfo() {
-		return movieInfo;
-	}
-	public void setMovieInfo(String movieInfo) {
-		this.movieInfo = movieInfo;
-	}
-	public int getMovieTime() {
-		return movieTime;
-	}
-	public void setMovieTime(int movieTime) {
-		this.movieTime = movieTime;
-	}
-	public String getMovieDirector() {
-		return movieDirector;
-	}
-	public void setMovieDirector(String movieDirector) {
-		this.movieDirector = movieDirector;
-	}
-	public String getMovieActors() {
-		return movieActors;
-	}
-	public void setMovieActors(String movieActors) {
-		this.movieActors = movieActors;
-	}
-	
-	
 }

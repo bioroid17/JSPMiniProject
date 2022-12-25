@@ -8,10 +8,15 @@ public interface MovieDAO {
 	public int checkAdmin(String adminId);
 	public int checkAdminId(String adminId, String adminPasswd);
 	public int checkAdminPasswd(String adminId, String adminPasswd);
-	public MovieDataBean getMovie(int movieId);
+	public MovieDataBean getMovie(String movieCd);
+	public MovieInfoDataBean getMovieInfo(String movieCd);
 	public List<MovieDataBean> getMovies(Map<String, String> map);
 	public int getMovieCount();
+	public int getMovieInfoCount(String movieCd);
 	public int insertMovie(MovieDataBean dto);
 	public int updateMovie(MovieDataBean dto);
+	public int insertMovieInfo(MovieInfoDataBean dto);
+	public int updateMovieInfo(MovieInfoDataBean dto);
+	public List<MovieDataBean> getMovieCds();
 	public int deleteMovie(int movieId);
 }

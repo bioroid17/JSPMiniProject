@@ -39,17 +39,17 @@ public class MovieInsertProHandler implements CommandHandler{
 		String moviePosterSysName = multi.getFilesystemName("moviePoster");		// 파일 이름 정책으로 변화되는 실제 파일 이름
 
 		////////////////////////////////////////////////////////////////////////////////////////////
-		dto.setMovieTitle(multi.getParameter("movieTitle"));
-		dto.setMovieGenre(multi.getParameter("movieGenre"));
-		dto.setMoviePosterDir(moviePosterDir);
-		dto.setMoviePosterOriName(moviePosterOriName);
-		dto.setMoviePosterSysName(moviePosterSysName);
-		dto.setMovieTags(multi.getParameter("movieTags"));
-		dto.setMovieAge(multi.getParameter("movieAge"));
-		dto.setMovieInfo(multi.getParameter("movieInfo"));
-		dto.setMovieTime(Integer.parseInt(multi.getParameter("movieTime")));
-		dto.setMovieDirector(multi.getParameter("movieDirector"));
-		dto.setMovieActors(multi.getParameter("movieActors"));
+//		dto.setMovieTitle(multi.getParameter("movieTitle"));
+//		dto.setMovieGenre(multi.getParameter("movieGenre"));
+//		dto.setMoviePosterDir(moviePosterDir);
+//		dto.setMoviePosterOriName(moviePosterOriName);
+//		dto.setMoviePosterSysName(moviePosterSysName);
+//		dto.setMovieTags(multi.getParameter("movieTags"));
+//		dto.setMovieAge(multi.getParameter("movieAge"));
+//		dto.setMovieInfo(multi.getParameter("movieInfo"));
+//		dto.setMovieTime(Integer.parseInt(multi.getParameter("movieTime")));
+//		dto.setMovieDirector(multi.getParameter("movieDirector"));
+//		dto.setMovieActors(multi.getParameter("movieActors"));
 		
 		int result = movieDao.insertMovie(dto);
 		
