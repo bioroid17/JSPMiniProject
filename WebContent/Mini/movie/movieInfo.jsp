@@ -12,8 +12,8 @@
 		<title>Generic - Phantom by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="${project}/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="${project}/assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -25,7 +25,7 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+									<span class="symbol"><img src="${project}/images/logo.svg" alt="" /></span><span class="title">Phantom</span>
 								</a>
 
 							<!-- Nav -->
@@ -49,32 +49,32 @@
 								<h2>영화</h2>
 								<div class="row">
 									<div class="col-6 col-12-medium">
-										<span class="image main"><img src="${project}/moviePoster/${dto.moviePosterSysName}" alt="" /></span>
+										<span class="image main"><img src="${project}/moviePoster/${movieDto.moviePosterSysName}" alt="" /></span>
 									</div>
 									<div class="col-6 col-12-medium">
 										<div class="table-wrapper">
 											<table>
 												<thead>
 													<tr>
-														<th colspan='2'>${dto.movieTitle}</th>
+														<th colspan='2'>${movieDto.movieNm}</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
 														<td style="width:25%">상영시간</td>
-														<td>${dto.movieTime}</td>
+														<td>${infoDto.showTm}</td>
 													</tr>
 													<tr>
 														<td>장르</td>
-														<td>${dto.movieGenre}</td>
+														<td>${infoDto.genres}</td>
 													</tr>
 													<tr>
 														<td>감독</td>
-														<td>${dto.movieDirector}</td>
+														<td>${infoDto.directorNms}</td>
 													</tr>
 													<tr>
 														<td>출연진</td>
-														<td>${dto.movieActors}</td>
+														<td>${infoDto.actorNms}</td>
 													</tr>
 												</tbody>
 											</table>
@@ -85,14 +85,15 @@
 							<hr>
 							<section>
 								<h2>시놉시스</h2>
-								<p>${dto.movieInfo}</p>
+								<%-- <p>${movieDto.movieInfo}</p> --%>
+								<p>시놉시스를 준비중입니다.</p>
 							</section>
 				
 							<c:if test="${sessionScope.adminId ne null}">
 								<div class="col-12">
 									<ul class="actions">
-										<li><input type="button" value="수정" class="primary" onclick="location='movieUpdateForm.do?movieId=${dto.movieId}'"/></li>
-										<li><input type="button" value="삭제" class="primary" onclick="location='movieDeleteForm.do?movieId=${dto.movieId}'"/></li>
+										<li><input type="button" value="수정" class="primary" onclick="location='movieUpdateForm.do?movieCd=${movieDto.movieCd}'"/></li>
+										<li><input type="button" value="삭제" class="primary" onclick="location='movieDeleteForm.do?movieCd=${movieDto.movieCd}'"/></li>
 									</ul>
 								</div>
 							</c:if>
@@ -144,11 +145,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
+			<script src="${project}/assets/js/jquery.min.js"></script>
+			<script src="${project}/assets/js/browser.min.js"></script>
+			<script src="${project}/assets/js/breakpoints.min.js"></script>
+			<script src="${project}/assets/js/util.js"></script>
+			<script src="${project}/assets/js/main.js"></script>
 
 	</body>
 </html>

@@ -19,8 +19,8 @@ public class MovieUpdateFormHandler implements CommandHandler{
 	@RequestMapping("movie/movieUpdateForm")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		int movieId = Integer.parseInt(request.getParameter("movieId"));
-		MovieDataBean dto = movieDao.getMovie(movieId);
+		String movieCd = request.getParameter("movieCd");
+		MovieDataBean dto = movieDao.getMovie(movieCd);
 		
 		request.setAttribute("dto", dto);
 		return new ModelAndView ("movie/movieUpdateForm");

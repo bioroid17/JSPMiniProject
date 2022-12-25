@@ -50,8 +50,8 @@ public class MovieDBBean implements MovieDAO{
 	}
 
 	@Override
-	public MovieDataBean getMovie(int movieId) {
-		return SqlMapClient.getSession().selectOne("Movies.getMovie", movieId);
+	public MovieDataBean getMovie(String movieCd) {
+		return SqlMapClient.getSession().selectOne("Movies.getMovie", movieCd);
 	}
 
 	@Override
@@ -73,10 +73,34 @@ public class MovieDBBean implements MovieDAO{
 	public int updateMovie(MovieDataBean dto) {
 		return SqlMapClient.getSession().update("Movies.updateMovie", dto);
 	}
+	@Override
+	public int insertMovieInfo(MovieInfoDataBean dto) {
+		return SqlMapClient.getSession().insert("Movies.insertMovieInfo", dto);
+	}
+
+	@Override
+	public int updateMovieInfo(MovieInfoDataBean dto) {
+		return SqlMapClient.getSession().update("Movies.updateMovieInfo", dto);
+	}
 
 	@Override
 	public int deleteMovie(int movieId) {
 		return SqlMapClient.getSession().delete("Movies.deleteMovie", movieId);
+	}
+
+	@Override
+	public List<MovieDataBean> getMovieCds() {
+		return SqlMapClient.getSession().selectList("Movies.getMovieCds");
+	}
+
+	@Override
+	public int getMovieInfoCount(String movieCd) {
+		return SqlMapClient.getSession().selectOne("Movies.getMovieInfoCount", movieCd);
+	}
+
+	@Override
+	public MovieInfoDataBean getMovieInfo(String movieCd) {
+		return SqlMapClient.getSession().selectOne("Movies.getMovieInfo", movieCd);
 	}
 
 }

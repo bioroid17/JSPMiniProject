@@ -52,10 +52,15 @@
 								<c:forEach var="dto" items="${dtos}">
 									<article class="style1">
 										<span class="image">
-											<img src="${project}/moviePoster/${dto.moviePosterSysName}" alt="" />
+											<c:if test="${dto.moviePosterSysName eq null}">
+												<img src="${project}/images/pic01.jpg" alt="" />
+											</c:if>
+											<c:if test="${dto.moviePosterSysName ne null}">
+												<img src="${project}/moviePoster/${dto.moviePosterSysName}" alt="" />
+											</c:if>
 										</span>
-										<a href="movieInfo.do?movieId=${dto.movieId}">
-											<h2>${dto.movieTitle}</h2>
+										<a href="movieInfo.do?movieCd=${dto.movieCd}">
+											<h2>${dto.movieNm}</h2>
 											<div class="content">
 												<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
 											</div>

@@ -10,23 +10,26 @@ import org.springframework.web.servlet.ModelAndView;
 
 import movie.MovieDAO;
 import movie.MovieDataBean;
+import movie.MovieInfoDataBean;
 
 @Controller
-public class MovieInfoHandler implements CommandHandler{
+public class MovieInfoHandler implements CommandHandler {
 
 	@Resource
 	private MovieDAO movieDao;
+
 	@RequestMapping("movie/movieInfo")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		int movieId = Integer.parseInt(request.getParameter("movieId"));
-	
-		MovieDataBean dto = movieDao.getMovie(movieId);
-		
+		String movieCd = request.getParameter("movieCd");
 
-		request.setAttribute("prodNum", movieId);
-		request.setAttribute("dto", dto);
-		
-		return new ModelAndView ("movie/movieInfo");
+		MovieDataBean movieDto = movieDao.getMovie(movieCd);
+		MovieInfoDataBean infoDto = movieDao.getMovieInfo(movieCd);
+
+		request.setAttribute("prodNum", movieCd);
+		request.setAttribute("movieDto", movieDto);
+		request.setAttribute("infoDto", infoDto);
+
+		return new ModelAndView("movie/movieInfo");
 	}
 }
